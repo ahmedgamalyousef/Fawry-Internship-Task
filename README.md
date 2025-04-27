@@ -22,12 +22,12 @@
 - Using getopts and shifting positional parameters cleanly also required careful handling to avoid wrong arguments .
 
 
-### Bonus Features
+#### Bonus Features
 - Added support for `--help` flag to print usage instructions .
 - Improved command-line option parsing using `getopts` for cleaner and more efficient handling of `-n` and `-v` options .
 
-### Screenshots
-See folder `screenshots/`.
+#### Screenshots
+- See folder `screenshots/`.
 
 ## Q2 - Internal Service Unreachable
 ### Steps Taken
@@ -38,4 +38,4 @@ See folder `screenshots/`.
 5. Bonus: Used /etc/hosts and systemd-resolved
 
 ### Screenshots
-See folder `screenshots/`.
+- See folder `screenshots/`.
