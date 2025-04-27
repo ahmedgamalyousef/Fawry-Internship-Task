@@ -1,5 +1,5 @@
 # Fawry-Internship-Task
-## Q1 : Custom Command (mygrep.sh)
+## Q1 : Custom Command ( mygrep.sh )
 ### Reflective Section
 #### 1. How does your script handle arguments and options ?
 - I used getopts to parse command-line options (-n, -v) .
