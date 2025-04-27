@@ -29,8 +29,7 @@
 #### Screenshots
 - See folder `screenshots/`.
 
-## Q2 - Internal Service Unreachable
-### Steps Taken
+## Q2 - Internal Service Unreachable ( Troubleshooting internal.example.com )
 1. Verified DNS with dig (local and 8.8.8.8)
 2. Diagnosed service with curl and telnet
 3. Listed possible causes
@@ -39,3 +38,32 @@
 
 ### Screenshots
 - See folder `screenshots/`.
+
+
+
+
+### 1. DNS Verification
+- Used dig to check DNS resolution locally and via 8.8.8.8.
+- Observed that local DNS failed to resolve, while Google DNS also did not find it.
+- Conclusion: Likely an internal DNS or network misconfiguration.
+### 2. Service Reachability
+- Used curl and telnet to check port 80 and 443 connectivity .
+- Found that telnet could not connect (connection refused) .
+- Used netstat to check if web server is listening → Web service was NOT listening on external interfaces .
+
+### 3. Possible Causes
+```
+DNS	-> Incorrect /etc/resolv.conf, DNS server down, internal-only domain
+Network	-> Firewall blocking ports, wrong routes
+Service	-> Web server down, misconfigured binding to 127.0.0.1
+
+```
+
+### 4. Solutions Applied
+```
+Problem	                        Confirmation	                Fix
+DNS wrong server	       cat /etc/resolv.conf	  Updated to correct DNS IP
+Service not listening	        ss -tuln	      Updated server config and restarted web service
+Firewall blocking        	sudo ufw              status	Allowed ports 80/443
+
+```
