@@ -22,3 +22,9 @@
 - The hardest part was correctly parsing options (-v, -n, combinations like -vn) .
 - Ensuring the logic for inverted matches with line numbers was tricky, especially when combining both options .
 - Using getopts and shifting positional parameters cleanly also required careful handling to avoid wrong arguments .
+
+
+## Bonus Features
+
+- Added support for `--help` flag to print usage instructions .
+- Improved command-line option parsing using `getopts` for cleaner and more efficient handling of `-n` and `-v` options .
