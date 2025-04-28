@@ -8,41 +8,41 @@
 
 ##### 🎯 **Argument :**
 - The script checks if there are at least two remaining arguments after processing the options:
-  - **`search_word`**: The text to search for.
-  - **`filename`**: The file to search in.
+  - **`search_word`**: The text to search for .
+  - **`filename`**: The file to search in .
 
 ##### ⚙️ **Option :**
 - Each option starting with `-` is processed using `getopts`:
   - **`-v`**: Inverts the match (prints lines that do not contain the search string).
-  - **`-n`**: Shows the line number before the matching text.
+  - **`-n`**: Shows the line number before the matching text .
   
-- The script allows options to be written in different formats:
-  - **Together**: `-vn`.
-  - **Separate**: `-v -n`.
-  - **In any order**: `-v -n` or `-n -v`.
+- The script allows options to be written in different formats :
+  - **Together**: `-vn` .
+  - **Separate**: `-v -n` .
+  - **In any order**: `-v -n` or `-n -v` .
 
 ##### 🔄 **How Options Work Together :**
-- If the user uses `-vn` or `-nv`, both options (`-n` and `-v`) will be activated, regardless of the order.
+- If the user uses `-vn` or `-nv`, both options (`-n` and `-v`) will be activated, regardless of the order .
 
 #### 2. Supporting Regex or Additional Options (`-i`, `-c`, `-l`) :
 
-- To add features like regex, **`-i`** (case-insensitive), **`-c`** (count matches), and **`-l`** (list file names with matches), the script needs some changes:
-  - **Regex Support**: Use `grep -E` to support regular expressions and allow pattern-based searches.
-  - **`-i`** (Case-Insensitive): Modify the script to handle case-insensitive searches by adding `-i` in `grep`.
-  - **`-c`** (Count Matches): Instead of showing matching lines, print the total number of matches.
-  - **`-l`** (List File Names): Show only file names that have matches, not the matching lines.
+- To add features like regex, **`-i`** (case-insensitive), **`-c`** (count matches), and **`-l`** (list file names with matches), the script needs some changes :
+  - **Regex Support**: Use `grep -E` to support regular expressions and allow pattern-based searches .
+  - **`-i`** (Case-Insensitive) : Modify the script to handle case-insensitive searches by adding `-i` in `grep` .
+  - **`-c`** (Count Matches): Instead of showing matching lines, print the total number of matches .
+  - **`-l`** (List File Names): Show only file names that have matches, not the matching lines .
 
 #### 3. 🏆 Most Hard Part of Script Implementation :
 
-- The hardest part of the script was handling combined options (like `-vn` and `-nv`) and making sure the script processes them correctly. Options can be written together or separately, so it was important to ensure the script handles them the same way regardless of the order.
+- The hardest part of the script was handling combined options (like `-vn` and `-nv`) and making sure the script processes them correctly. Options can be written together or separately, so it was important to ensure the script handles them the same way regardless of the order .
 
 ##### ❓ **Why was this part hard ?**
-- Users might mix up the order or combine options in unexpected ways.
-- It was essential to ensure the script handles these cases without errors or surprises.
+- Users might mix up the order or combine options in unexpected ways .
+- It was essential to ensure the script handles these cases without errors or surprises .
 
 ##### 🛠️ **How was this handled?**
-- `getopts` was used to process the options, ensuring consistent behavior whether options are combined or separate.
-- The script also checks for missing search strings and filenames and provides clear error messages when needed.
+- `getopts` was used to process the options, ensuring consistent behavior whether options are combined or separate .
+- The script also checks for missing search strings and filenames and provides clear error messages when needed .
 
 #### 4.✨ **Bonus Features**
 - Added support for `--help`  flag to print usage instructions .
@@ -54,9 +54,9 @@
 ## ❓ Quiz 2 : Scenario 
 ### 🛠️ Internal Service DNS/Network Troubleshooting Report
 ###### 📋 Scenario
-- The internal service `internal.example.com` is unreachable.
-- Users are seeing “host not found” errors.
-- Task is to troubleshoot, verify, and restore access.
+- The internal service `internal.example.com` is unreachable .
+- Users are seeing “host not found” errors .
+- Task is to troubleshoot, verify, and restore access .
 ##### 1. Verify DNS Resolution
 ##### Commands Used :
 ```bash
@@ -74,11 +74,11 @@ ping internal.example.com
 ```
 - We found that the server can't be reached using DNS or 8.8.8.8 , then start to apply temporary solution
 ##### 🔧 Temporary Solution:
-- Added a manual entry to /etc/hosts file:
+- Added a manual entry to /etc/hosts file :
 ```
 192.168.43.139      internal.example.com
 ```
-- After modification, the /etc/hosts file looks like:
+- After modification, the /etc/hosts file looks like :
 ```
 192.168.43.139 internal.example.com
 127.0.0.1 localhost
