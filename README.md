@@ -136,6 +136,8 @@ curl http://internal.example.com
 ```
 <html>
 <head><title>502 Bad Gateway</title></head>
+
+this is a TEST
 <body>
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.24.0 (Ubuntu)</center>
